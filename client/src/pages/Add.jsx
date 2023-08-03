@@ -1,34 +1,35 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
+import "../style.css"
 
 const Add = () => {
-const [book, setBook] = useState({
+const [snip, setSnip] = useState({
   title: "",
   desc: "",
-  price: null,
+  amount: null,
   cover: "",
 });
 
   const navigate = useNavigate()
 
   const handleChange = (e) =>{
-    setBook(prev=>({ ...prev, [e.target.name]: e.target.value}))
+    setSnip(prev=>({ ...prev, [e.target.name]: e.target.value}))
   };
 
   const handleClick = async e =>{
     e.preventDefault()
     try{
-      await axios.post("http://localhost:8800/books", book)
+      await axios.post("http://localhost:8800/snips", snip)
       navigate("/")
     }catch(err){
       console.log(err)
     }
   }
-  console.log(book)
+  console.log(snip)
   return (
     <div className="form">
-      <h1>Add new book</h1>
+      <h1>Add new snip</h1>
       <input 
         type="text" 
         placeholder='title' 
@@ -41,11 +42,11 @@ const [book, setBook] = useState({
         onChange={handleChange} 
         name="desc"
       />
-      <input 
+      <input  
         type="number" 
-        placeholder='price' 
+        placeholder='amount' 
         onChange={handleChange} 
-        name="price"
+        name="amount"
       />
       <input 
         type="text" 

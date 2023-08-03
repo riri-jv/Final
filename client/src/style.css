@@ -1,32 +1,143 @@
 .App{
-  height: 100v;
-  padding: 0px 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 100vh;
+  max-width: 100vw; 
+  align-items: left;
+  justify-content: left;
+}
+
+/*---------------Heading Bar---------------*/
+.HeadingBar {
+  height: 5%;
+  width: 100vw;
+  /*background-color: antiquewhite;  */
+  padding-top: 1%;
+  font-size: 30px;
+  font-weight: bold;
+  font-family:'Times New Roman', Times, serif;
   text-align: center;
 }
 
-.books{
+/*---------------Body Contents---------------*/
+.contents{
+  height: 93%;
+  max-width: 100vw;
+  /*background-color: brown;*/
   display: flex;
-  gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
-.book{
-  flex:1;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  align-items: center;
+/*---------------Left Panel---------------*/
+.LeftPanel {
+  height: 100%;
+  width: 15%;
+  background: linear-gradient(to top, #ffc1c1ae, white);
+  margin-right: 1%;
 }
+
+/*---------------Right Panel---------------*/
+.RightPanel {
+  height: 100%;
+  width: 25%;
+  background: linear-gradient(to top, #ffc1c1ae, white);
+}
+
+/*---------------Snip App---------------*/
+.SnipApp{
+  width: 65%;
+ /* display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;*/
+  /*background-color: rgb(47, 231, 148);  */
+}
+
+/*----------------Add new Snip-----------------*/
+.AddNewSnipButton{
+  border: none;
+  background-color: #ffc1c1e6;
+  border-radius: 6px;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  height: 30px;
+}
+
+.Link{
+  text-decoration: none;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-weight: bolder;
+  font-size: 16px;
+  padding-left: 12px;
+  padding-right: 10px;
+}
+
+/*---------------Snips Container---------------*/
+.snips{
+  gap: 10px;/*dont chaange this too*/
+  background-color:#ffc1c1ae;
+  padding: 2%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  overflow: auto; 
+  height: 81vh;
+  border-radius: 1%;
+}
+
+/*---------------Individual snip---------------
+.snip{
+  height: 300px;
+  min-width: 40%;
+  max-width: 440px;
+  flex:1;/*dont chaange this too
+  display: flex;/*dont change this- all will go one below on ein a snip
+  flex-direction: column;/*dont change this- all will go one below on ein a snip
+  gap: 5px; /*gap bwteen elemtns */
+  /*dont chaange this too
+  background-color: beige;
+  border-radius: 1%;
+} */
+
+/*---------------Snips arrangement---------------*/
+.snips > div {
+  line-height: 450px;
+  height: 150px;
+ /* margin: 5px;
+  text-align: center;*/
+}
+
+/*-----------Scroll bar design-----------------*/
+
+#snips::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px  rgba(193, 193, 193, 0.3);
+	border-radius: 10px;
+	background-color: #ffffff;
+}
+
+#snips::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+#snips::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(148, 148, 148, 0.3);
+	background-color:  #ffc1c1ae;
+}
+
 
 img{
-  width:200px;
-  height: 300px;
+  width:50px;
+  height:50px;
   object-fit: cover;
   background-color: aquamarine;
+  margin-left: 5px;
 }
 
+/*---------------Update and delete buttons---------------*/
 .delete{
   border: none;
   padding: 3px 6px;
@@ -34,6 +145,9 @@ img{
   cursor: pointer;
   border: 1px solid rgb(245, 191, 191);
   color:rgb(242, 100, 100);
+  float: right;
+  margin-right: 2%;
+  margin-top: 2%;
 }
 
 .update{
@@ -43,4 +157,31 @@ img{
   cursor: pointer;
   border: 1px solid rgb(204, 204, 243);
   color:rgb(139, 139, 234);
+  float: right;
+  margin-right: 2%;
+  margin-top: 2%;
+}
+
+
+
+.snip {
+  height: 300px;
+  min-width: 40%;
+  max-width: 440px;
+  background-color: beige;
+  border-radius: 1%;
+  flex:1;
+}
+
+
+
+.top {
+  background-color: bisque;
+  max-height: 40px;
+}
+
+
+.icon {
+  height: 12px;
+  width: 12px;
 }
